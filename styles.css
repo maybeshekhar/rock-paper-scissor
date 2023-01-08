@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 10%, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+    min-height: 100vh
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1vw;
+    flex-direction: column;
+    align-items: center;
+}
+
+#score {
+    background-color: white;
+    width: 25%;
+    height: 110px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: hsla(229, 64%, 46%, 0.829);
+    margin-right: 5px;
+}
+
+#options {
+    margin-bottom: -5px;
+    margin-left: 10px;
+
+}
+
+h1 {
+    color: hsl(229, 25%, 31%);
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 1em;
+    margin-bottom: -8px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid hsl(217, 16%, 45%);
+    border-radius: 15px;
+    padding: 15px;
+    width: 40rem;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 6vw;
+
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+.circle {
+    background-color: white;
+    border-radius: 100px;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 5px 0 0 hsl(0, 0%, 89%);
+
+}
+
+.backgr {
+    margin-top: -0.1rem;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#middle {
+    display: flex;
+    justify-content: space-between;
+    min-width: 28rem;
+
+}
+
+#down {
+    display: flex;
+    justify-content: space-around;
+    min-width: 23rem;
+    margin-top: 40px;
+}
+
+#pentagon {
+    position: absolute;
+    z-index: -1;
+    margin-top: -70px;
+}
+
+.opacityOFF {
+    opacity: 0
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titleOfChoosen {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: white;
+    width: 29rem;
+    margin-bottom: -50px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#you {
+    margin-left: 3.5rem;
+}
+
+#you.showWords {
+    transform: translate(-100px, 0);
+    opacity: 1;
+}
+
+#pc.showWords {
+    transform: translate(100px, 0);
+    opacity: 1;
+}
+
+#enemy {
+    transform: scale(1.5) translate(205px, 50px);
+    opacity: 0;
+    z-index: -1;
+    margin-top: 2.6rem;
+    margin-right: 19rem;
+}
+
+#enemy.opacityON {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+#enemy.show {
+    transform: scale(1.5) translate(265px, 50px);
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+#enemy.show.radial {
+    box-shadow: 0px 0px 100px -10px white;
+}
+
+#conclusion {
+    text-align: center;
+}
+
+h4 {
+    opacity: 0;
+}
+
+#pc {
+    margin-right: 1.5rem;
+}
+
+#you.opacityON,
+#pc.opacityON {
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+.enemyInside {
+    background-color: rgba(0, 0, 0, 0.151);
+    border-radius: 100px;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enemyInside.showMe {
+    background-color: white;
+    border-radius: 100px;
+    width: 6rem;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 5px 0 0 hsl(0, 0%, 89%);
+}
+
+#scissors {
+    margin-top: -10rem;
+    background: linear-gradient(hsl(40, 84%, 53%), hsl(39, 89%, 49%));
+    box-shadow: inset 0px -6px 0px 0px hsl(32, 94%, 40%);
+}
+
+#scissors.chosen {
+    transform: translate(-140px, 105px) scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 5
+}
+
+#scissors.notChosen {
+    transform: translate(-170px, 100px);
+    transition: all 1s ease-in-out
+}
+
+#scissors.final {
+    transform: translate(-240px, 107px) scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 5
+}
+
+#scissors.opacity {
+    opacity: 0;
+}
+
+.scissors {
+    background: linear-gradient(hsl(40, 84%, 53%), hsl(39, 89%, 49%));
+    box-shadow: inset 0px -6px 0px 0px hsl(32, 94%, 40%);
+}
+
+#spock {
+    background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+    box-shadow: inset 0px -6px 0px 0px hsl(189, 80%, 38%);
+}
+
+#spock.chosen {
+    transform: translate(20px, -20px)scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 1
+}
+
+#spock.notChosen {
+    transform: translate(20px, 0px);
+    transition: all 1s ease-in-out;
+    z-index: -1;
+}
+
+#spock.final {
+    transform: translate(-80px, -20px) scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 1
+}
+
+#spock.opacity {
+    opacity: 0;
+}
+
+.spock {
+    background: linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%));
+    box-shadow: inset 0px -6px 0px 0px hsl(189, 80%, 38%);
+}
+
+#lizard {
+    background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+    box-shadow: inset 0px -6px 0px 0px hsl(261, 52%, 46%);
+}
+
+#lizard.chosen {
+    transform: translate(-55px, -185px) scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 1;
+}
+
+#lizard.notChosen {
+    transform: translate(-55px, -200px);
+    transition: all 1s ease-in-out;
+    z-index: -1;
+}
+
+#lizard.final {
+    transform: translate(-150px, -185px) scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 1
+}
+
+#lizard.opacity {
+    opacity: 0;
+}
+
+.lizard {
+    background: linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%));
+    box-shadow: inset 0px -6px 0px 0px hsl(261, 52%, 46%);
+}
+
+#paper {
+    background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    box-shadow: inset 0px -6px 0px 0px hsl(230, 56%, 46%);
+}
+
+#paper.chosen {
+    transform: translate(-300px, -20px)scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 1;
+}
+
+#scissors.chosen.radial {
+    box-shadow: 0px 0px 100px -10px white;
+
+}
+
+#spock.chosen.radial {
+    box-shadow: 0px 0px 100px -10px white;
+
+}
+
+#paper.chosen.radial {
+    box-shadow: 0px 0px 100px -10px white;
+
+}
+
+#lizard.chosen.radial {
+    box-shadow: 0px 0px 100px -10px white;
+
+}
+
+#rock.chosen.radial {
+    box-shadow: 0px 0px 100px -10px white;
+
+}
+
+#paper.notChosen {
+    transform: translate(-300px, 0px);
+    transition: all 1s ease-in-out;
+    z-index: -1;
+}
+
+#paper.final {
+    transform: translate(-400px, -20px) scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 1
+}
+
+#paper.opacity {
+    opacity: 0;
+}
+
+.paper {
+    background: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    box-shadow: inset 0px -6px 0px 0px hsl(230, 56%, 46%);
+}
+
+#rock {
+    background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    box-shadow: inset 0px -6px 0px 0px hsl(349, 76%, 37%);
+}
+
+#rock.chosen {
+    transform: translate(-230px, -185px)scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 1;
+}
+
+#rock.notChosen {
+    transform: translate(-250px, -200px);
+    transition: all 1s ease-in-out;
+    z-index: -1;
+}
+
+#rock.final {
+    transform: translate(-330px, -186px) scale(1.5);
+    transition: all 1s ease-in-out;
+    z-index: 1
+}
+
+#rock.opacity {
+    opacity: 0;
+}
+
+.rock {
+    background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    box-shadow: inset 0px -6px 0px 0px hsl(349, 76%, 37%);
+}
+
+#rules {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.575);
+    z-index: 10;
+}
+
+#whiteBoard {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    transform: scale(1.5)
+}
+
+#rulesHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+h3 {
+    font-size: 33px;
+    color: hsl(229, 25%, 31%);
+}
+
+#close {
+    background-color: transparent;
+    border: 0px;
+    cursor: pointer;
+}
+
+#divBtn {
+    width: 90vw;
+    margin-bottom: 0;
+    margin-top: 5vh;
+}
+
+#rulesBtn {
+    background-color: transparent;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    width: 5rem;
+    height: 2rem;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#result {
+    position: absolute;
+    color: white;
+    width: auto;
+    top: 30rem;
+    transform: scale(.1);
+
+    opacity: 0
+}
+
+#result.go {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 1s ease-in-out;
+}
+
+h5 {
+    font-size: 3em;
+    margin-bottom: 1rem
+}
+
+#playAgain {
+    background-color: white;
+    color: hsl(229, 25%, 31%);
+    border-radius: 5px;
+    border: 0;
+    padding: 10px;
+    padding-left: 3.95rem;
+    padding-right: 3.95rem;
+    font-size: .8rem;
+}
+
+
+@media screen and (max-width:1100px) {
+    #main {
+        transform: scale(.75)
+    }
+
+    #header {
+        margin-top: -15vh;
+    }
+}
+
+
+
+
+@media screen and (max-width:500px) {
+
+    #main {
+        transform: scale(.7);
+        width: 100vw;
+        height: 100vw;
+    }
+
+    #board {
+        width: 140vw;
+    }
+
+    #header {
+        width: 120vw;
+        margin-bottom: 7rem;
+        margin-top: 1rem;
+    }
+
+    #pentagon {
+        margin-top: -25vh;
+    }
+
+    #titleOfChoosen {
+        width: 31.5rem;
+    }
+
+    #enemy {
+        transform: scale(1.5) translate(265px, 50px);
+        opacity: 0;
+        z-index: -1;
+        margin-top: 2.6rem;
+        margin-right: 30rem;
+
+    }
+
+    #enemy.show {
+        transform: scale(1.5) translate(265px, 50px);
+        opacity: 1;
+        transition: all 1s ease-in-out;
+    }
+
+    #scissors.chosen {
+        transform: translate(-160px, 103px) scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 5
+    }
+
+    #scissors.final {
+        transform: translate(-160px, 107px) scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 5
+    }
+
+    #rock.chosen {
+        transform: translate(-250px, -186px)scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 1;
+    }
+
+    #rock.final {
+        transform: translate(-250px, -186px) scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 1
+    }
+
+    #spock.chosen {
+        transform: translate(0px, -20px)scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 1
+    }
+
+    #spock.final {
+        transform: translate(0px, -20px) scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 1
+    }
+
+    #lizard.chosen {
+        transform: translate(-65px, -185px) scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 1;
+    }
+
+    #lizard.final {
+        transform: translate(-65px, -185px) scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 1
+    }
+
+    #paper.final {
+        transform: translate(-315px, -20px) scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 1
+    }
+
+    #paper.chosen {
+        transform: translate(-318px, -20px)scale(1.5);
+        transition: all 1s ease-in-out;
+        z-index: 1;
+    }
+
+    #you.showWords {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+
+    #pc.showWords {
+        transform: translate(0px, 0);
+        opacity: 1;
+    }
+
+    #result {
+        top: 70vh;
+        transform: scale(.1);
+    }
+
+    #rules {
+        margin-left: -20vw;
+        margin-top: -21vh;
+        z-index: 10;
+        width: 140vw;
+        height: 142vh;
+        background-color: rgba(0, 0, 0, 0.575);
+    }
+
+    #rulesBtn {
+        align-self: center;
+        width: 30vw;
+        margin-bottom: 10vh;
+    }
+
+    #whiteBoard {
+        transform: scale(.8);
+    }
+}

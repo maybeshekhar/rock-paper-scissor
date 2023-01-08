@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 1%
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="main">
+
+
+
+    <div id="rules">
+
+      <div id="whiteBoard">
+        <div id="rulesHeader">
+          <h3>RULES</h3>
+          <button id="close">
+            <img src="./images/icon-close.svg" alt="Close rules and start the game.">
+          </button>
+        </div>
+        <img src="./images/image-rules-bonus.svg" alt="Scissors beats paper and lizzard.
+         Paper beats rock and spock.
+         Rock beats lizzard and scissors.
+         Lizzard beats spock and paper.
+         Spock beats scissors and rock.">
+      </div>
+    </div>
+
+
+
+    <div id="container">
+      <div id="header">
+        <img id="options" src="./images/logo-bonus.svg" alt="Rock, Paper, Scissors, Lizard, Spock">
+        <div id="score">
+          <h2>SCORE</h2>
+          <h1 id="numScore">0</h1>
+        </div>
+      </div>
+
+      <div id="board">
+
+        <img id="pentagon" src="./images/bg-pentagon.svg" alt="" aria-hidden="true">
+
+        <div id="result">
+          <h5 id="conclusion">YOU LOSE</h5>
+          <btn id="playAgain">PLAY AGAIN</btn>
+        </div>
+        <div id="titleOfChoosen">
+          <h4 id="you">YOU PICKED</h4>
+          <h4 id='pc'>THE HOUSE PICKED</h4>
+        </div>
+
+        <div class="backgr" id="enemy">
+          <div class="enemyInside"></div>
+        </div>
+
+        <div class="backgr" id="scissors">
+          <div class="circle">
+            <img src="./images/icon-scissors.svg" alt="first option scissors">
+          </div>
+        </div>
+
+        <div id="middle">
+          <div class="backgr" id="spock">
+            <div class="circle">
+              <img src="./images/icon-spock.svg" alt="second option spock">
+            </div>
+          </div>
+
+          <div class="backgr" id="paper">
+            <div class="circle">
+              <img src="./images/icon-paper.svg" alt="third option paper">
+            </div>
+          </div>
+        </div>
+        <div id="down">
+
+          <div class="backgr" id="lizard">
+            <div class="circle">
+              <img src="./images/icon-lizard.svg" alt="fourth option lizzard">
+            </div>
+
+          </div>
+
+          <div class="backgr" id="rock">
+            <div class="circle">
+              <img src="./images/icon-rock.svg" alt="fifth option rock">
+            </div>
+
+          </div>
+
+        </div>
+        <div id="divBtn"></div>
+        <button id="rulesBtn">RULES</button>
+      </div>
+
+      
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
